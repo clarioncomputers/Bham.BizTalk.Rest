@@ -5,9 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 using Bham.BizTalk.Rest;
 using NLog;
 
-// Copy this class into your BizTalk helper project and adjust namespace/sink as needed.
-// This file is reference-only and is not compiled into the main library.
-// NLog methods require the NLog package in the target project.
+// Logging helper for Gallagher API operations with NLog support.
+// This class provides logging-enabled wrappers around GallagherApiFacade methods.
 public static class GallagherLoggingHelper
 {
     private const string EventSourceName = "Bham.BizTalk.Rest";
@@ -210,6 +209,26 @@ public static class GallagherLoggingHelper
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("AddAccessGroupToCardholder"));
+    }
+
+    public static string GetPersonalDataFieldsByNameWithNLog(
+        string baseUrl,
+        string apiKeyHeaderName,
+        string apiKeyHeaderValue,
+        string fieldName,
+        string certThumbprint = null,
+        int timeoutSeconds = 100)
+    {
+        return GallagherApiFacade.GetPersonalDataFieldsByName(
+            baseUrl,
+            apiKeyHeaderName,
+            apiKeyHeaderValue,
+            fieldName,
+            certThumbprint,
+            StoreLocation.LocalMachine,
+            StoreName.My,
+            timeoutSeconds,
+            CreateNLogLogger("GetPersonalDataFieldsByName"));
     }
 
     private static Action<BizTalkRestLogEntry> CreateLogger(string context)

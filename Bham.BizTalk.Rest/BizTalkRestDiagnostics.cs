@@ -36,6 +36,7 @@ namespace Bham.BizTalk.Rest
     /// <summary>
     /// Exception thrown when a REST call fails and HTTP context needs to be preserved.
     /// </summary>
+    [Serializable]
     public sealed class BizTalkRestClientException : Exception
     {
         /// <summary>

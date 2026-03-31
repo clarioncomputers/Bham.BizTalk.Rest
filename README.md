@@ -505,13 +505,17 @@ Available parser methods:
 
 ## 9. Build and test
 
-Build solution:
+Build solution (includes BizTalk project and requires BizTalk build targets):
 
     dotnet build .\Bham.HelperClient.sln -c Release
 
-Build + test script:
+Build + test script (includes BizTalk project):
 
     .\scripts\build-and-test.ps1 -Configuration Release
+
+Build + test script (NON-BIZTALK, excludes .btproj):
+
+    .\scripts\build-and-test-non-biztalk.ps1 -Configuration Release
 
 Run tests directly:
 

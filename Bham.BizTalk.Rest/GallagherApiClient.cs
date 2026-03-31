@@ -197,7 +197,15 @@ namespace Bham.BizTalk.Rest
         /// </summary>
         public string ResolveAccessGroupMembershipHref(string accessGroupId, string cardholderId)
         {
-            return GallagherApiResponseParser.GetAccessGroupMembershipHrefForCardholder(GetAccessGroupCardholders(accessGroupId), cardholderId);
+            try
+            {
+                return GallagherApiResponseParser.GetAccessGroupMembershipHrefForCardholder(GetAccessGroupCardholders(accessGroupId), cardholderId);
+            }
+            catch (BizTalkRestClientException ex) when (ex.StatusCode == 404)
+            {
+                // Access group does not exist, so no membership exists
+                return string.Empty;
+            }
         }
 
         /// <summary>

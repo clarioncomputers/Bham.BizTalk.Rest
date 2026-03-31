@@ -1,0 +1,10 @@
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\bin\Debug\Bham.BizTalk.Rest.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\bin\Debug\System.Net.Http.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\objNew\Debug\Bham.BizTalk.Rest.csproj.AssemblyReference.cache
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\objNew\Debug\Bham.BizTalk.Rest.csproj.CoreCompileInputs.cache
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\objNew\Debug\Bham.BizTalk.Rest.csproj.CopyComplete
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\objNew\Debug\Bham.BizTalk.Rest.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\objNew\Debug\Bham.BizTalk.Rest.pdb
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\binNew\Bham.BizTalk.Rest.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\binNew\Bham.BizTalk.Rest.pdb
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest\binNew\System.Net.Http.dll
