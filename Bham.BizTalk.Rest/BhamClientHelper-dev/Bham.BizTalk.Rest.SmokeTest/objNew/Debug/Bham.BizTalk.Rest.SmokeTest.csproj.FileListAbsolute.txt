@@ -1,0 +1,10 @@
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\binNew\Bham.BizTalk.Rest.SmokeTest.exe
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\binNew\Bham.BizTalk.Rest.SmokeTest.pdb
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\binNew\Bham.BizTalk.Rest.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\binNew\System.Net.Http.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\binNew\Bham.BizTalk.Rest.pdb
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\objNew\Debug\Bham.BizTalk.Rest.SmokeTest.csproj.AssemblyReference.cache
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\objNew\Debug\Bham.BizTalk.Rest.SmokeTest.csproj.CoreCompileInputs.cache
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\objNew\Debug\Bham.BizTalk.Rest.SmokeTest.csproj.CopyComplete
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\objNew\Debug\Bham.BizTalk.Rest.SmokeTest.exe
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.SmokeTest\objNew\Debug\Bham.BizTalk.Rest.SmokeTest.pdb

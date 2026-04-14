@@ -1,0 +1,688 @@
+{
+  "info": {
+    "_postman_id": "a656e65e-28a2-4d98-8d85-2a7c686aeee7",
+    "name": "Gallagher API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41989325",
+    "_collection_link": "https://go.postman.co/collection/41989325-a656e65e-28a2-4d98-8d85-2a7c686aeee7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "PDF ID",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/personal_data_fields?name=\"ThirdPartyID\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "personal_data_fields"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "\"ThirdPartyID\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cardholder ID - IDCARD.12345",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders?pdf_629=\"IDCARD.12345\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "cardholders"
+          ],
+          "query": [
+            {
+              "key": "pdf_629",
+              "value": "\"IDCARD.12345\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cardholder ID - IDCARD.2953599",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders?pdf_629=\"IDCARD.12345\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "cardholders"
+          ],
+          "query": [
+            {
+              "key": "pdf_629",
+              "value": "\"IDCARD.12345\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cardholder ID - IDCARD.3001566",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders?pdf_629=\"IDCARD.3001566\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "cardholders"
+          ],
+          "query": [
+            {
+              "key": "pdf_629",
+              "value": "\"IDCARD.3001566\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cardholder ID - IDCARD.2969311",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders?pdf_629=\"IDCARD.2969311\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "cardholders"
+          ],
+          "query": [
+            {
+              "key": "pdf_629",
+              "value": "\"IDCARD.2969311\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Group ID",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/access_groups",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "access_groups"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Group ID Search - 6040-CHAMBERLAIN-B-11703",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/access_groups?name=\"6040-CHAMBERLAIN-B-11703\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "access_groups"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "\"6040-CHAMBERLAIN-B-11703\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Group ID Search - 6090-MASON-114-02",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/access_groups?name=\"6090-MASON-114-02\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "access_groups"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "\"6090-MASON-114-02\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Group ID Search - 6030-AITKEN-B-1204",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/access_groups?name=\"6030-AITKEN-B-1204\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "access_groups"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "\"6030-AITKEN-B-1204\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Group ID Search - 6090-MASON-142-04",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/access_groups?name=\"6030-AITKEN-B-1204\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "access_groups"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "\"6030-AITKEN-B-1204\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Group ID Search - 6090-MASON-4-06",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/access_groups?name=\"6090-MASON-4-06\"",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "access_groups"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "\"6090-MASON-4-06\""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Access Group Cardholders",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/access_groups/663/cardholders",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "access_groups",
+            "663",
+            "cardholders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Access Group to Cardholder",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accessGroups\": {\r\n    \"add\": [\r\n        {\r\n            \"accessGroup\": {\r\n                \"href\": \"https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders/653/access_groups/5c59b883a9774ca68fa5b000124b5778\"\r\n            },\r\n            \"from\": \"2026-04-01T14:00:00Z\",\r\n            \"until\": \"2026-12-01T10:00:00Z\"\r\n        }\r\n    ]\r\n}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders/653",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "cardholders",
+            "653"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Remove Cardholder from Access Group",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accessGroups\": {\r\n    \"remove\": [\r\n        {\r\n            \"href\": \"https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders/653/access_groups/18ae8e5aa6e74d898a4353abdb828647\"\r\n        }\r\n    ]\r\n}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders/653",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "cardholders",
+            "653"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Cardholder Access Group",
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "key",
+              "value": "Authorization",
+              "type": "string"
+            },
+            {
+              "key": "value",
+              "value": "2133-6820-E746-11CC-52D2-3417-CF15-2482",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"accessGroups\": {\r\n    \"update\": [\r\n        {\r\n            \"href\": \"https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders/653/access_groups/44f0e2997ee241cd8311931995f9ac41\",\r\n            \"from\": \"2026-04-01T00:00:00Z\",\r\n            \"until\": \"2026-09-21T12:00:00Z\"\r\n        }\r\n    ]\r\n}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api/cardholders/653",
+          "protocol": "https",
+          "host": [
+            "its-d-cdx-01",
+            "adf",
+            "bham",
+            "ac",
+            "uk"
+          ],
+          "port": "8904",
+          "path": [
+            "api",
+            "cardholders",
+            "653"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

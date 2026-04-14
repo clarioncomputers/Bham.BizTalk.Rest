@@ -1,0 +1,12 @@
+{
+  "baseUrl": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api",
+  "apiKey": "replace-with-api-key",
+  "operation": "add",
+  "gallagherCardholderId": "653",
+  "accessGroupId": "663",
+  "from": "2026-04-01",
+  "until": "2026-05-01",
+  "storeLocation": "LocalMachine",
+  "storeName": "My",
+  "timeoutSeconds": 100
+}

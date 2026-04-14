@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
+    <file value="D:/BizTalkLogs/HelperClient/helperclient.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Date" />
+    <datePattern value="yyyyMMdd'.log'" />
+    <staticLogFileName value="false" />
+    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date{yyyy-MM-dd HH:mm:ss,fff} | %-5level | %logger | %message%newline" />
+    </layout>
+  </appender>
+
+  <logger name="Bham.BizTalk.Rest.Gallagher" additivity="false">
+    <level value="INFO" />
+    <appender-ref ref="RollingFile" />
+  </logger>
+
+  <root>
+    <level value="INFO" />
+    <appender-ref ref="RollingFile" />
+  </root>
+</log4net>

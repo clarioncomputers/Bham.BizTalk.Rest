@@ -1,0 +1,14 @@
+{
+  "baseUrl": "https://its-d-cdx-01.adf.bham.ac.uk:8904/api",
+  "apiKey": "replace-with-api-key",
+  "operation": "add",
+  "cardholderId": "IDCARD.12345",
+  "pdfFieldId": "629",
+  "pdfFieldKey": "pdf_629",
+  "accessGroupName": "6040-CHAMBERLAIN-B-11703",
+  "from": "2026-04-01",
+  "until": "2026-05-01",
+  "storeLocation": "LocalMachine",
+  "storeName": "My",
+  "timeoutSeconds": 100
+}

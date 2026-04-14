@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      autoReload="true"
+      throwConfigExceptions="true"
+      internalLogLevel="Warn">
+
+  <targets async="true">
+    <target xsi:type="File"
+            name="biztalkFile"
+            fileName="D:/BizTalkLogs/HelperClient/helperclient.${shortdate}.log"
+            layout="${longdate}|${level:uppercase=true}|${logger}|${message}${onexception:inner=|${exception:format=tostring}}"
+            keepFileOpen="false"
+            concurrentWrites="true"
+            archiveEvery="Day"
+            archiveNumbering="Date"
+            maxArchiveFiles="30"
+            createDirs="true"
+            encoding="utf-8" />
+  </targets>
+
+  <rules>
+    <logger name="Bham.BizTalk.Rest.*" minlevel="Info" writeTo="biztalkFile" />
+  </rules>
+</nlog>
