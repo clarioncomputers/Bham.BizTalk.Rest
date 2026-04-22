@@ -164,8 +164,8 @@ Ready-made sample class:
 1. Add NuGet packages to your BizTalk helper project:
 
 ```powershell
-Install-Package NLog -Version 4.7.15
-Install-Package NLog.Config -Version 4.7.15
+Install-Package NLog -Version 6.1.1
+Install-Package NLog.Config -Version 6.1.1
 ```
 
 2. Copy `samples/GallagherLoggingHelper.cs` into your helper project.

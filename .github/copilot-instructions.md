@@ -2,13 +2,13 @@
 Summary: File created and maintained.
 
 - [x] Clarify Project Requirements
-Summary: User requested a new workspace with a .NET 4.6 BizTalk helper class library, static HttpClient, GET and PATCH support, and strong-name readiness.
+Summary: User requested a new workspace with a .NET Framework 4.6.1 BizTalk helper class library, static HttpClient, GET and PATCH support, and strong-name readiness.
 
 - [x] Scaffold the Project
 Summary: Created solution and class library in the workspace root using dotnet CLI.
 
 - [x] Customize the Project
-Summary: Retargeted to net46 and added PatchClient implementation with GET/PATCH methods, certificate lookup, and HttpClient cache.
+Summary: Retargeted to net461 and added PatchClient implementation with GET/PATCH methods, certificate lookup, and HttpClient cache.
 
 - [x] Install Required Extensions
 Summary: No extensions required.

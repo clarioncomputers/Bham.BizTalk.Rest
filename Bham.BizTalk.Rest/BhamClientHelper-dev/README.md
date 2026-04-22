@@ -739,7 +739,7 @@ This section gives a simple explanation for each public method. For methods that
 
 ### BizTalkRestLogging methods
 
-- `Write(logger, level, operation, url, message, statusCode, exception)`
+- `Write(logger, level, operation, url, message, exception, statusCode)`
     Sends a diagnostic event to the configured logger callback if one is present.
 
 ### PatchClient methods

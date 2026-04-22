@@ -61,6 +61,7 @@
     <Compile Include="BizTalkRestDiagnostics.cs" />
     <Compile Include="GallagherApiClient.cs" />
     <Compile Include="GallagherApiFacade.cs" />
+    <Compile Include="GallagherDateTimeHelper.cs" />
     <Compile Include="GallagherApiResponseParser.cs" />
     <Compile Include="GallagherLoggingHelper.cs" />
     <Compile Include="GallagherWorkflowOptions.cs" />

@@ -903,6 +903,22 @@ namespace Bham.BizTalk.Rest
         }
 
         /// <summary>
+        /// Converts UK date and time values (for example 17/04/26 and 10:00) into Gallagher UTC format.
+        /// </summary>
+        public static string ConvertUkDateAndTimeToUtcIso8601(string ukDate, string ukTime)
+        {
+            return GallagherDateTimeHelper.ConvertUkDateAndTimeToUtcIso8601(ukDate, ukTime);
+        }
+
+        /// <summary>
+        /// Alias for converting UK date and time values into Gallagher UTC format.
+        /// </summary>
+        public static string ConvertUkDateAndTimeToGallagherUtc(string ukDate, string ukTime)
+        {
+            return ConvertUkDateAndTimeToUtcIso8601(ukDate, ukTime);
+        }
+
+        /// <summary>
         /// Removes an access group assignment from a cardholder using an explicit certificate and timeout configuration.
         /// </summary>
         public static string RemoveAccessGroupFromCardholder(

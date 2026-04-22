@@ -38,6 +38,41 @@ namespace Bham.BizTalk.Rest.Tests
             AssertContains(ex.ParamName, "ApiKeyHeaderName");
         }
 
+        public static void ConvertUkDateAndTimeToUtcIso8601_ConvertsBstToUtc()
+        {
+            var result = GallagherApiFacade.ConvertUkDateAndTimeToUtcIso8601("17/04/26", "10:00");
+
+            AssertEqual("2026-04-17T09:00:00Z", result);
+        }
+
+        public static void ConvertUkDateAndTimeToUtcIso8601_ConvertsWinterTimeToUtc()
+        {
+            var result = GallagherApiFacade.ConvertUkDateAndTimeToUtcIso8601("17/12/26", "10:00");
+
+            AssertEqual("2026-12-17T10:00:00Z", result);
+        }
+
+        public static void ConvertUkDateAndTimeToUtcIso8601_ThrowsFormatException_WhenDateIsInvalid()
+        {
+            ExpectThrows<FormatException>(() => GallagherApiFacade.ConvertUkDateAndTimeToUtcIso8601("2026-04-17", "10:00"));
+        }
+
+        public static void ConvertUkDateAndTimeToUtcIso8601_ThrowsArgumentNullException_WhenTimeMissing()
+        {
+            var ex = ExpectThrows<ArgumentNullException>(() => GallagherApiFacade.ConvertUkDateAndTimeToUtcIso8601("17/04/26", "  "));
+
+            AssertContains(ex.ParamName, "ukTime");
+        }
+
+        private static void AssertEqual(string expected, string actual)
+        {
+            if (!string.Equals(expected, actual, StringComparison.Ordinal))
+            {
+                throw new InvalidOperationException(
+                    string.Format("Assertion failed. Expected: '{0}' Actual: '{1}'", expected, actual));
+            }
+        }
+
         private static void AssertContains(string actual, string expectedFragment)
         {
             if (actual == null || actual.IndexOf(expectedFragment, StringComparison.Ordinal) < 0)
