@@ -917,7 +917,7 @@ namespace Bham.BizTalk.Rest
         {
             return ConvertUkDateAndTimeToUtcIso8601(ukDate, ukTime);
         }
-
+        
         /// <summary>
         /// Removes an access group assignment from a cardholder using an explicit certificate and timeout configuration.
         /// </summary>

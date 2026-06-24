@@ -1,0 +1,203 @@
+{
+  "info": {
+    "_postman_id": "ffffb447-d723-4bed-beac-12ae827b453b",
+    "name": "Starrez",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41989325",
+    "_collection_link": "https://go.postman.co/collection/41989325-ffffb447-d723-4bed-beac-12ae827b453b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Entry",
+      "protocolProfileBehavior": {
+        "tlsDisabledProtocols": [
+          "TLSv1_2"
+        ]
+      },
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "9f0a2d6b-8fea-465f-8f51-20725c6f75d6",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "BizTalk Birmingham",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/select/Entry.xml/?ID1=2953599",
+          "protocol": "https",
+          "host": [
+            "BIRMINGHAM",
+            "starrezhousing",
+            "com"
+          ],
+          "path": [
+            "StarRezRESTDev",
+            "services",
+            "select",
+            "Entry.xml",
+            ""
+          ],
+          "query": [
+            {
+              "key": "ID1",
+              "value": "2953599"
+            }
+          ]
+        },
+        "description": "Generated from cURL:  curl -u \"BizTalk Birmingham:f0a2d6b-8fea-465f-8f51-20725c6f75d6\" \"https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/getreport/Birmingham.RoomAddressExport\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Booking",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "9f0a2d6b-8fea-465f-8f51-20725c6f75d6",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "BizTalk Birmingham",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/select/Booking.xml/?BookingID=169648",
+          "protocol": "https",
+          "host": [
+            "BIRMINGHAM",
+            "starrezhousing",
+            "com"
+          ],
+          "path": [
+            "StarRezRESTDev",
+            "services",
+            "select",
+            "Booking.xml",
+            ""
+          ],
+          "query": [
+            {
+              "key": "BookingID",
+              "value": "169648"
+            }
+          ]
+        },
+        "description": "Generated from cURL:  curl -u \"BizTalk Birmingham:f0a2d6b-8fea-465f-8f51-20725c6f75d6\" \"https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/getreport/Birmingham.RoomAddressExport\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "RoomSpaceDetail",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "9f0a2d6b-8fea-465f-8f51-20725c6f75d6",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "BizTalk Birmingham",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/select/RoomSpaceDetail.xml/?RoomSpaceID=1419",
+          "protocol": "https",
+          "host": [
+            "BIRMINGHAM",
+            "starrezhousing",
+            "com"
+          ],
+          "path": [
+            "StarRezRESTDev",
+            "services",
+            "select",
+            "RoomSpaceDetail.xml",
+            ""
+          ],
+          "query": [
+            {
+              "key": "RoomSpaceID",
+              "value": "1419"
+            }
+          ]
+        },
+        "description": "Generated from cURL:  curl -u \"BizTalk Birmingham:f0a2d6b-8fea-465f-8f51-20725c6f75d6\" \"https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/getreport/Birmingham.RoomAddressExport\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateBooking",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "9f0a2d6b-8fea-465f-8f51-20725c6f75d6",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "BizTalk Birmingham",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "<Booking>\r\n  <CustomDate1>2024-09-21T00:00:00</CustomDate1>\r\n  <CustomString10>2024-09-21T00:00:00</CustomString10>\r\n  <Start_BookingReasonID>1</Start_BookingReasonID>\r\n  <EntryStatusEnum>Reserved</EntryStatusEnum>\r\n</Booking>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/update/Booking/156275",
+          "protocol": "https",
+          "host": [
+            "BIRMINGHAM",
+            "starrezhousing",
+            "com"
+          ],
+          "path": [
+            "StarRezRESTDev",
+            "services",
+            "update",
+            "Booking",
+            "156275"
+          ]
+        },
+        "description": "Generated from cURL:  curl -u \"BizTalk Birmingham:f0a2d6b-8fea-465f-8f51-20725c6f75d6\" \"https://BIRMINGHAM.starrezhousing.com/StarRezRESTDev/services/getreport/Birmingham.RoomAddressExport\"\r\n"
+      },
+      "response": []
+    }
+  ]
+}

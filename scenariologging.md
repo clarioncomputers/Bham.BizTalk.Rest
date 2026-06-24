@@ -23,9 +23,6 @@ This document provides BizTalk Expression-shape examples for Scenario 1 (add mem
   - `strCardholderId`
   - `strAccessGroupName`
   - `strAccessGroupHref`
-  - `strFromDate`
-  - `strUntilDate`
-  - `strResponse`
   - `strGallagherCardholderId`
   - `strMembershipHref`
 
@@ -74,11 +71,7 @@ public static string ResolveAccessGroupHrefByNameWithNLog(
         System.Security.Cryptography.X509Certificates.StoreName.My,
         timeoutSeconds,
         CreateNLogLogger("ResolveAccessGroupHrefByName"));
-}
-
-public static string ResolveAccessGroupMembershipHrefWithNLog(
     string baseUrl,
-    string apiKeyHeaderName,
     string apiKeyHeaderValue,
     string accessGroupHref,
     string cardholderId,
@@ -210,6 +203,7 @@ strAccessGroupHref =
 
 ### Expression Shape D (Check if Membership Already Exists with NLog)
 
+
 ```csharp
 strMembershipHref =
     GallagherLoggingHelper.ResolveAccessGroupMembershipHrefWithNLog(
@@ -220,6 +214,46 @@ strMembershipHref =
         strGallagherCardholderId,
         strCertThumbprint,
         100);
+```
+
+### Expression Shape D.5 (Check Access Group Exists with NLog)
+
+```csharp
+// Resolve the access group ID from the name with logging
+strAccessGroupId =
+    GallagherLoggingHelper.ResolveAccessGroupIdByNameWithNLog(
+        strGallagherBaseUrl,
+        "Authorization",
+        strApiKey,
+        strAccessGroupName,
+        strCertThumbprint,
+        100);
+
+// Check if the access group exists with logging
+strAccessGroupResponse =
+    GallagherLoggingHelper.GetAccessGroupByIdWithNLog(
+        strGallagherBaseUrl,
+        "Authorization",
+        strApiKey,
+        strAccessGroupId,
+        strCertThumbprint,
+        100);
+```
+
+### Decision Shape (Can Proceed with Add)
+
+```csharp
+// Only proceed if:
+// - Access group ID is not empty
+// - Access group exists (response is valid)
+// - Membership does not already exist
+
+bool canProceedWithAdd =
+    !string.IsNullOrEmpty(strAccessGroupId)
+    && strAccessGroupResponse != null
+    && strAccessGroupResponse != ""
+    && !strAccessGroupResponse.Contains("Invalid access group ID")
+    && strMembershipHref == "";
 ```
 
 ### Decision Shape (Check if Membership Exists)

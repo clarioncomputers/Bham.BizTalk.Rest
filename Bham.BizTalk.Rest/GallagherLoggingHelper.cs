@@ -7,8 +7,136 @@ using NLog;
 
 // Logging helper for Gallagher API operations with NLog support.
 // This class provides logging-enabled wrappers around GallagherApiFacade methods.
-public static class GallagherLoggingHelper
+namespace Bham.BizTalk.Rest
 {
+    public static class GallagherLoggingHelper 
+
+    {
+        /// <summary>
+        /// Logs an orchestration transcript or any string to NLog (Info level).
+        /// Call this from BizTalk Expression Shapes.
+        /// </summary>
+        public static void LogTranscript(string transcript)
+        {
+            var logger = NLog.LogManager.GetLogger(NLogLoggerName);
+            logger.Info("Orchestration Transcript: {0}", transcript);
+        }
+        public static string ResolveAccessGroupIdByNameWithNLog(
+            string baseUrl,
+            string apiKeyHeaderName,
+            string apiKeyHeaderValue,
+            string accessGroupName,
+            string certThumbprint = null,
+            int timeoutSeconds = 100)
+        {
+            return GallagherApiFacade.ResolveAccessGroupIdByName(
+                baseUrl,
+                apiKeyHeaderName,
+                apiKeyHeaderValue,
+                accessGroupName,
+                certThumbprint,
+                StoreLocation.CurrentUser,
+                StoreName.My,
+                timeoutSeconds,
+                CreateNLogLogger("ResolveAccessGroupIdByName"));
+        }
+
+        public static string GetAccessGroupByIdWithNLog(
+            string baseUrl,
+            string apiKeyHeaderName,
+            string apiKeyHeaderValue,
+            string accessGroupId,
+            string certThumbprint = null,
+            int timeoutSeconds = 100)
+        {
+            return GallagherApiFacade.GetAccessGroupById(
+                baseUrl,
+                apiKeyHeaderName,
+                apiKeyHeaderValue,
+                accessGroupId,
+                certThumbprint,
+                StoreLocation.CurrentUser,
+                StoreName.My,
+                timeoutSeconds,
+                CreateNLogLogger("GetAccessGroupById"));
+        }
+        /// <summary>
+        /// Checks if a cardholder has a specific access group by name using GallagherApiResponseParser.
+        /// </summary>
+        public static bool CardholderHasAccessGroupByName(string cardholderAccessGroupsJson, string accessGroupName)
+        {
+            string id;
+            return GallagherApiResponseParser.TryGetEntityIdByName(cardholderAccessGroupsJson, accessGroupName, out id);
+        }
+
+        /// <summary>
+        /// Checks if a cardholder has a specific access group by name and date range using GallagherApiResponseParser.
+        /// </summary>
+        public static bool CardholderHasAccessGroupByNameAndDates(string cardholderAccessGroupsJson, string accessGroupName, string fromDate, string untilDate)
+        {
+            string href;
+            return GallagherApiResponseParser.TryGetAccessGroupMembershipHrefByNameAndDates(cardholderAccessGroupsJson, accessGroupName, fromDate, untilDate, out href);
+        }
+
+        /// <summary>
+        /// Resolves a personal data field name to its Gallagher id, with NLog logging support.
+        /// </summary>
+        public static string ResolvePersonalDataFieldIdWithNLog(
+            string baseUrl,
+            string apiKeyHeaderName,
+            string apiKeyHeaderValue,
+            string fieldName,
+            string certThumbprint = null,
+            int timeoutSeconds = 100)
+        {
+            return GallagherApiFacade.ResolvePersonalDataFieldId(
+                baseUrl,
+                apiKeyHeaderName,
+                apiKeyHeaderValue,
+                fieldName,
+                certThumbprint,
+                StoreLocation.CurrentUser,
+                StoreName.My,
+                timeoutSeconds,
+                CreateNLogLogger("ResolvePersonalDataFieldId"));
+        }
+        /// <summary>
+        /// Example logger for use as a logCallback from BizTalk orchestrations.
+        /// Writes log entry messages to Trace output.
+        /// </summary>
+        public static void MyOrchestrationLogger(BizTalkRestLogEntry entry)
+        {
+            if (entry != null)
+            {
+                System.Diagnostics.Trace.WriteLine(entry.Message, "Bham.BizTalk.Rest.Orchestration");
+                if (entry.Exception != null)
+                {
+                    System.Diagnostics.Trace.WriteLine(entry.Exception.ToString(), "Bham.BizTalk.Rest.Orchestration");
+                }
+            }
+        }
+    /// <summary>
+    /// Example: Call GallagherApiFacade with a custom logCallback (Action<BizTalkRestLogEntry>).
+    /// Use this from an orchestration by referencing this method in an Expression shape.
+    /// </summary>
+    public static string GetCardholdersWithCustomLogger(
+        string baseUrl,
+        string apiKeyHeaderName,
+        string apiKeyHeaderValue,
+        Action<BizTalkRestLogEntry> logCallback,
+        string certThumbprint = null,
+        int timeoutSeconds = 100)
+    {
+        return GallagherApiFacade.GetCardholders(
+            baseUrl,
+            apiKeyHeaderName,
+            apiKeyHeaderValue,
+            certThumbprint,
+            StoreLocation.LocalMachine,
+            StoreName.My,
+            timeoutSeconds,
+            logCallback);
+    }
     private const string EventSourceName = "Bham.BizTalk.Rest";
     private const string EventLogName = "Application";
     private const string NLogLoggerName = "Bham.BizTalk.Rest.Gallagher";
@@ -25,7 +153,7 @@ public static class GallagherLoggingHelper
             apiKeyHeaderName,
             apiKeyHeaderValue,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateLogger("GetCardholders"));
@@ -47,7 +175,7 @@ public static class GallagherLoggingHelper
             externalCardholderId,
             pdfFieldKey,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateLogger("ResolveGallagherCardholderId"));
@@ -73,7 +201,7 @@ public static class GallagherLoggingHelper
             fromDate,
             untilDate,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateLogger("AddAccessGroupToCardholder"));
@@ -91,7 +219,7 @@ public static class GallagherLoggingHelper
             apiKeyHeaderName,
             apiKeyHeaderValue,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateEventLogLogger("GetCardholders"));
@@ -113,7 +241,7 @@ public static class GallagherLoggingHelper
             externalCardholderId,
             pdfFieldKey,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateEventLogLogger("ResolveGallagherCardholderId"));
@@ -139,7 +267,7 @@ public static class GallagherLoggingHelper
             fromDate,
             untilDate,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateEventLogLogger("AddAccessGroupToCardholder"));
@@ -157,7 +285,7 @@ public static class GallagherLoggingHelper
             apiKeyHeaderName,
             apiKeyHeaderValue,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("GetCardholders"));
@@ -179,7 +307,7 @@ public static class GallagherLoggingHelper
             externalCardholderId,
             pdfFieldKey,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("ResolveGallagherCardholderId"));
@@ -201,7 +329,7 @@ public static class GallagherLoggingHelper
             cardholderId,
             pdfFieldKey,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("GetCardholdersByPdfValue"));
@@ -221,7 +349,7 @@ public static class GallagherLoggingHelper
             apiKeyHeaderValue,
             accessGroupName,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("ResolveAccessGroupHrefByName"));
@@ -243,7 +371,7 @@ public static class GallagherLoggingHelper
             accessGroupHref,
             cardholderId,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("ResolveAccessGroupMembershipHref"));
@@ -269,7 +397,7 @@ public static class GallagherLoggingHelper
             fromDate,
             untilDate,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("AddAccessGroupToCardholder"));
@@ -291,7 +419,7 @@ public static class GallagherLoggingHelper
             cardholderId,
             membershipHref,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("RemoveCardholderFromAccessGroup"));
@@ -311,7 +439,7 @@ public static class GallagherLoggingHelper
             apiKeyHeaderValue,
             fieldName,
             certThumbprint,
-            StoreLocation.LocalMachine,
+            StoreLocation.CurrentUser,
             StoreName.My,
             timeoutSeconds,
             CreateNLogLogger("GetPersonalDataFieldsByName"));
@@ -456,5 +584,6 @@ public static class GallagherLoggingHelper
             default:
                 return NLog.LogLevel.Info;
         }
+    }
     }
 }

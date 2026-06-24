@@ -10,7 +10,7 @@
     <GenericProcessing>true</GenericProcessing>
     <RootNamespace>Bham.Rest.BizTalkProject</RootNamespace>
     <AssemblyName>Bham.Rest.BizTalkProject</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <BpelCompliance>True</BpelCompliance>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -39,10 +39,6 @@
     <AssemblyOriginatorKeyFile>UoB.Esb.Bts.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bham.BizTalk.Rest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=19907e4ef9b504bb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Bham.BizTalk.Rest\v4.0_1.0.0.0__19907e4ef9b504bb\Bham.BizTalk.Rest.dll</HintPath>
-    </Reference>
     <Reference Include="NLog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>packages\NLog.6.1.1\lib\net46\NLog.dll</HintPath>
       <Private>True</Private>
@@ -93,6 +89,12 @@
       <Namespace>Bham.Rest.BizTalkProject</Namespace>
       <SubType>Designer</SubType>
     </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bham.BizTalk.Rest\Bham.BizTalk.Rest.csproj">
+      <Project>{33ad76ea-b87b-4571-853c-84fa0e326200}</Project>
+      <Name>Bham.BizTalk.Rest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />

@@ -79,6 +79,7 @@ strAccessGroupHref =
 
 ### Expression Shape D (Check if Membership Already Exists)
 
+
 ```csharp
 strMembershipHref =
     Bham.BizTalk.Rest.GallagherApiFacade.ResolveAccessGroupMembershipHref(
@@ -87,6 +88,34 @@ strMembershipHref =
         strApiKey,
         strAccessGroupHref,
         strGallagherCardholderId,
+        strCertThumbprint,
+        System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine,
+        System.Security.Cryptography.X509Certificates.StoreName.My,
+        100);
+```
+
+### Expression Shape D.5 (Check Access Group Exists)
+
+```csharp
+// Resolve the access group ID from the name
+strAccessGroupId =
+    Bham.BizTalk.Rest.GallagherApiFacade.ResolveAccessGroupIdByName(
+        strGallagherBaseUrl,
+        "Authorization",
+        strApiKey,
+        strAccessGroupName,
+        strCertThumbprint,
+        System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine,
+        System.Security.Cryptography.X509Certificates.StoreName.My,
+        100);
+
+// Check if the access group exists
+strAccessGroupResponse =
+    Bham.BizTalk.Rest.GallagherApiFacade.GetAccessGroupById(
+        strGallagherBaseUrl,
+        "Authorization",
+        strApiKey,
+        strAccessGroupId,
         strCertThumbprint,
         System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine,
         System.Security.Cryptography.X509Certificates.StoreName.My,

@@ -1,0 +1,12 @@
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpbin\tests\Bham.BizTalk.Rest.Tests.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpbin\tests\Bham.BizTalk.Rest.Tests.pdb
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpbin\tests\Bham.BizTalk.Rest.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpbin\tests\NLog.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpbin\tests\System.Net.Http.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpbin\tests\Bham.BizTalk.Rest.pdb
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpbin\tests\NLog.xml
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpobj\tests\Debug\Bham.BizTalk.Rest.Tests.csproj.AssemblyReference.cache
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpobj\tests\Debug\Bham.BizTalk.Rest.Tests.csproj.CoreCompileInputs.cache
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpobj\tests\Debug\Bham.BizTalk.Rest.Tests.csproj.CopyComplete
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpobj\tests\Debug\Bham.BizTalk.Rest.Tests.dll
+F:\Projects\BhamClientHelper-main\Bham.BizTalk.Rest.Tests\artifacts\tmpobj\tests\Debug\Bham.BizTalk.Rest.Tests.pdb
