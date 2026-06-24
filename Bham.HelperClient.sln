@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bham.BizTalk.Rest", "Bham.BizTalk.Rest\Bham.BizTalk.Rest.csproj", "{33AD76EA-B87B-4571-853C-84FA0E326200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bham.Rest.BizTalkProject", "Bham.Rest.BizTalkProject\Bham.Rest.BizTalkProject.btproj", "{47E596D9-40C7-42ED-BB03-2D1D92464C40}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
