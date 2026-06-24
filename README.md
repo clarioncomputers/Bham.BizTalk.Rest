@@ -1,5 +1,7 @@
 # Bham.HelperClient
 
+[![CI Pipeline](https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_apis/build/status/YOUR_PIPELINE_NAME?branchName=dev)](https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_build/latest?definitionId=YOUR_DEFINITION_ID&branchName=refs/heads/dev)
+
 BizTalk 2016 helper library for outbound REST GET and PATCH calls, with Gallagher-specific wrappers.
 
 ## 1. What this library gives a BizTalk developer
@@ -17,9 +19,13 @@ Target framework:
 Main output:
 - Bham.BizTalk.Rest.dll
 
-## Azure DevOps CI pipeline
+## Azure DevOps CI/CD
 
 This repository now includes Azure DevOps YAML at azure-pipelines.yml.
+
+Badge setup:
+- Replace `YOUR_ORG`, `YOUR_PROJECT`, `YOUR_PIPELINE_NAME`, and `YOUR_DEFINITION_ID` in the badge URL above.
+- Keep `branchName=dev` if `dev` is your active integration branch.
 
 Default pipeline behavior:
 - Runs on a Microsoft-hosted Windows agent.
@@ -37,6 +43,11 @@ Recommended usage:
 2. Choose azure-pipelines.yml at repository root.
 3. Run as-is to validate non-BizTalk CI.
 4. When your self-hosted BizTalk agent is ready, set RunBizTalkBuild=true and BizTalkPoolName to your pool name.
+
+Suggested governance:
+1. Set the pipeline default branch to `dev`.
+2. Add branch policy so pull requests require this pipeline to pass.
+3. Add a nightly schedule to detect toolchain or dependency drift.
 
 ## 2. Quick start for BizTalk (recommended path)
 
