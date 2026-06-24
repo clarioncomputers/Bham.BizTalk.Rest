@@ -1,6 +1,6 @@
 # Bham.HelperClient
 
-[![CI Pipeline](https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_apis/build/status/YOUR_PIPELINE_NAME?branchName=dev)](https://dev.azure.com/YOUR_ORG/YOUR_PROJECT/_build/latest?definitionId=YOUR_DEFINITION_ID&branchName=refs/heads/dev)
+[![CI Pipeline](https://dev.azure.com/clarion2049/Bham.BizTalk.Rest/_apis/build/status/clarioncomputers.Bham.BizTalk.Rest?branchName=dev)](https://dev.azure.com/clarion2049/Bham.BizTalk.Rest/_build/latest?definitionId=12&branchName=refs/heads/dev)
 
 BizTalk 2016 helper library for outbound REST GET and PATCH calls, with Gallagher-specific wrappers.
 
