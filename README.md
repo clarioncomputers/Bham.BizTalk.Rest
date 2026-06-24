@@ -17,6 +17,27 @@ Target framework:
 Main output:
 - Bham.BizTalk.Rest.dll
 
+## Azure DevOps CI pipeline
+
+This repository now includes Azure DevOps YAML at azure-pipelines.yml.
+
+Default pipeline behavior:
+- Runs on a Microsoft-hosted Windows agent.
+- Executes scripts/build-and-test-non-biztalk.ps1 in Release mode.
+- Validates restore, build, and tests for the non-BizTalk projects.
+
+Optional BizTalk stage:
+- Stage name: BizTalk.
+- Disabled by default with variable RunBizTalkBuild=false.
+- Requires a self-hosted Windows agent pool with BizTalk Developer Tools installed.
+- Uses variable BizTalkPoolName to select that pool.
+
+Recommended usage:
+1. Create a new Azure DevOps pipeline from this repo and select Existing Azure Pipelines YAML file.
+2. Choose azure-pipelines.yml at repository root.
+3. Run as-is to validate non-BizTalk CI.
+4. When your self-hosted BizTalk agent is ready, set RunBizTalkBuild=true and BizTalkPoolName to your pool name.
+
 ## 2. Quick start for BizTalk (recommended path)
 
 Use the static facade class in orchestration Expression shapes:

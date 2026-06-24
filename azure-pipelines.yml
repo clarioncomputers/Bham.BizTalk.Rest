@@ -1,0 +1,76 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+
+trigger:
+  branches:
+    include:
+      - main
+      - master
+
+pr:
+  branches:
+    include:
+      - main
+      - master
+
+variables:
+  BuildConfiguration: Release
+  RunBizTalkBuild: false
+  BizTalkPoolName: BizTalkSelfHosted
+  BizTalkProjectPath: Bham.BizTalk.Rest/BhamClientHelper-dev/Bham.Rest.BizTalkProject/Bham.Rest.BizTalkProject.btproj
+
+stages:
+  - stage: NonBizTalk
+    displayName: Non-BizTalk CI
+    jobs:
+      - job: BuildAndTest
+        displayName: Build and test on hosted agent
+        pool:
+          vmImage: windows-latest
+        steps:
+          - checkout: self
+            clean: true
+
+          - task: UseDotNet@2
+            displayName: Use .NET SDK 9.x
+            inputs:
+              packageType: sdk
+              version: 9.x
+
+          - task: PowerShell@2
+            displayName: Run non-BizTalk build and tests
+            inputs:
+              targetType: filePath
+              filePath: scripts/build-and-test-non-biztalk.ps1
+              arguments: -Configuration $(BuildConfiguration)
+              pwsh: true
+
+  - stage: BizTalk
+    displayName: BizTalk build (self-hosted)
+    dependsOn: NonBizTalk
+    condition: and(succeeded(), eq(variables['RunBizTalkBuild'], 'true'))
+    jobs:
+      - job: BuildBizTalkProject
+        displayName: Build BizTalk project
+        pool:
+          name: $(BizTalkPoolName)
+        steps:
+          - checkout: self
+            clean: true
+
+          - task: PowerShell@2
+            displayName: Validate BizTalk targets are installed
+            inputs:
+              targetType: inline
+              script: |
+                $targets = "$(MSBuildExtensionsPath32)\Microsoft\BizTalk\BizTalkC.targets"
+                if (-not (Test-Path $targets)) {
+                  throw "BizTalk build targets not found at: $targets"
+                }
+                Write-Host "Found BizTalk targets: $targets"
+
+          - task: PowerShell@2
+            displayName: Build BizTalk .btproj
+            inputs:
+              targetType: inline
+              script: |
+                msbuild "$(BizTalkProjectPath)" /p:Configuration=$(BuildConfiguration) /p:Platform="Any CPU" /m /nologo
