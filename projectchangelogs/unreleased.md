@@ -1,0 +1,31 @@
+# Changelog
+
+Generated: 2026-06-26 12:42:08 +01:00
+Source: latest 100 commits
+
+- Update Azure DevOps pipeline badge (62da9f8)
+- Updated REAMME.md file (7abb2ae)
+- Add Azure DevOps pipeline and CI docs (0cec54f)
+- removed BizTalk project code. (c67a45a)
+- Updated code and .Net 4.6 (6a275d1)
+- Checked .md files reflect actual code, and added helper functions for UK to US date-time. (9d348cc)
+- Merge from watsonby 20260414. (74d05b9)
+- Added dev branch (8aa4091)
+- Added logging samples including classes. (c3f3960)
+- simplified the facade calls (cb127e5)
+- Added facade class (d52b318)
+- added facade class (de5b17f)
+- Added samples in README for cert thumbprint and JSON parsing. (390223a)
+- added JSON parser search options to include name, from date, to date. (f6dd30c)
+- added GET wrappers and README Orch samples (f15829a)
+- added GET wrappers and README Orch samples (644c349)
+- added more samples (469f7a7)
+- added samples (a698715)
+- added .odx samples (d0a2780)
+- Removed Github actions (25b50e7)
+- \updated code to make certificate thumbprint, store and name more optional. (ba3cbe6)
+- made project compatible with VS2015 net461 (c1be7b3)
+- removed thumbprints (optinal). (aad11c8)
+- added exception handling, logging, and README.md help samples (4a4d2b9)
+- Add BizTalk wrapper and public smoke-test script (18125f3)
+- Initial commit: BizTalk REST helper and smoke test (939ff22)
