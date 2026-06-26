@@ -5,12 +5,14 @@ trigger:
     include:
       - main
       - master
+      - dev
 
 pr:
   branches:
     include:
       - main
       - master
+      - dev
 
 variables:
   BuildConfiguration: Release
